@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMC FOOD PRODUCTS - TASTY | Fresh Dairy from Sri Lanka</title>
+    <meta name="description" content="DMC FOOD PRODUCTS - Fresh, hygienic, and tasty dairy products from Sri Lanka. Order Iced Coffee, Curd, and Yoghurt directly via WhatsApp.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --milk-white: #FAFBFC;
+            --cream: #F5F1E8;
+            --soft-brown: #8B6F4E;
+            --light-green: #A8C686;
+            --dark-green: #5C7A3A;
+            --text-dark: #2C3E2D;
+            --text-light: #6B7280;
+            --accent-gold: #D4A574;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--milk-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(250, 251, 252, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--light-green);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            color: var(--text-dark);
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .logo-slogan {
+            font-size: 0.75rem;
+            color: var(--soft-brown);
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--light-green);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgba(168, 198, 134, 0.1) 0%, rgba(245, 241, 232, 0.8) 100%),
+                        url('https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=1920') center/cover;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="%23A8C686" stroke-width="0.5" opacity="0.1"/></svg>') repeat;
+            background-size: 100px;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem 2rem;
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-slogan {
+            font-size: 1.5rem;
+            color: var(--soft-brown);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .hero-slogan::before,
+        .hero-slogan::after {
+            content: '';
+            height: 2px;
+            width: 40px;
+            background: var(--light-green);
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--dark-green);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(92, 122, 58, 0.3);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary:hover {
+            background: var(--soft-brown);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 111, 78, 0.4);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .floating-badge {
+            position: absolute;
+            background: white;
+            padding: 1rem 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .badge-1 {
+            top: 10%;
+            left: -10%;
+            animation-delay: 0s;
+        }
+
+        .badge-2 {
+            bottom: 20%;
+            right: -5%;
+            animation-delay: 2s;
+        }
+
+        .badge-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--light-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        /* Sections General */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* Featured Product */
+        .featured-product {
+            background: linear-gradient(to bottom, var(--cream), var(--milk-white));
+            position: relative;
+        }
+
+        .product-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            background: white;
+            padding: 3rem;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+        }
+
+        .product-image {
+            position: relative;
+            text-align: center;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: var(--accent-gold);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .product-info h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            color: var(--dark-green);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .product-description {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .product-meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .meta-item i {
+            color: var(--light-green);
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            background: var(--milk-white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--light-green), var(--dark-green));
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border-color: var(--light-green);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--light-green), var(--dark-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 1.75rem;
+            box-shadow: 0 10px 20px rgba(168, 198, 134, 0.3);
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* About Section */
+        .about {
+            background: linear-gradient(135deg, var(--cream) 0%, var(--milk-white) 100%);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .experience-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: var(--dark-green);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .experience-badge .years {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+            line-height: 1;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .about-text p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .founder-info {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            border-left: 4px solid var(--light-green);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .founder-avatar {
+            width: 60px;
+            height: 60px;
+            background: var(--cream);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--soft-brown);
+        }
+
+        .founder-details h4 {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .founder-details p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        /* Vision & Mission */
+        .vision-mission {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .vm-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .vm-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 6px;
+            background: var(--light-green);
+            border-radius: 20px 0 0 20px;
+        }
+
+        .vm-card.vision::before {
+            background: var(--light-green);
+        }
+
+        .vm-card.mission::before {
+            background: var(--soft-brown);
+        }
+
+        .vm-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .vm-card h3 i {
+            color: var(--light-green);
+        }
+
+        .vm-card.mission h3 i {
+            color: var(--soft-brown);
+        }
+
+        /* Products Page */
+        .products {
+            background: var(--milk-white);
+            padding-top: 8rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+
+        .product-card.available {
+            border: 2px solid var(--light-green);
+        }
+
+        .product-card.out-of-stock {
+            opacity: 0.7;
+            border: 2px solid #e5e7eb;
+        }
+
+        .product-image-container {
+            height: 250px;
+            background: linear-gradient(135deg, var(--cream), var(--milk-white));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card.available .product-image-container {
+            background: linear-gradient(135deg, #f0f7e6, var(--cream));
+        }
+
+        .product-card img {
+            max-height: 80%;
+            max-width: 80%;
+            object-fit: contain;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .stock-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .stock-badge.available {
+            background: var(--light-green);
+            color: white;
+        }
+
+        .stock-badge.out-of-stock {
+            background: #ef4444;
+            color: white;
+        }
+
+        .product-card-content {
+            padding: 1.5rem;
+        }
+
+        .product-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-card .price {
+            font-size: 1.25rem;
+            color: var(--dark-green);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-card .size {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn-whatsapp {
+            width: 100%;
+            background: #25D366;
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .btn-whatsapp:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+        }
+
+        .btn-disabled {
+            width: 100%;
+            background: #d1d5db;
+            color: #6b7280;
+            border: none;
+            padding: 1rem;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: not-allowed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        /* Delivery Info */
+        .delivery {
+            background: linear-gradient(135deg, var(--dark-green), var(--light-green));
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .delivery::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        .delivery-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .delivery-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .delivery-content p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .delivery-areas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .area-tag {
+            background: rgba(255,255,255,0.2);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .delivery-visual {
+            text-align: center;
+        }
+
+        .delivery-icon {
+            width: 150px;
+            height: 150px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            font-size: 4rem;
+            backdrop-filter: blur(10px);
+            border: 3px solid rgba(255,255,255,0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Contact */
+        .contact {
+            background: var(--milk-white);
+            padding-top: 8rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--cream);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-green);
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .contact-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+            color: var(--text-dark);
+        }
+
+        .contact-text p, .contact-text a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-text a:hover {
+            color: var(--dark-green);
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--light-green);
+        }
+
+        .map-container {
+            margin-top: 4rem;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            height: 400px;
+            background: var(--cream);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .map-placeholder {
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        .map-placeholder i {
+            font-size: 3rem;
+            color: var(--light-green);
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand .logo-title {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-brand .logo-slogan {
+            color: var(--light-green);
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.7);
+            margin-top: 1rem;
+            line-height: 1.8;
+        }
+
+        .footer-links h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--light-green);
+        }
+
+        .footer-contact p {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255,255,255,0.5);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--milk-white);
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding-top: 8rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .floating-badge {
+                display: none;
+            }
+
+            .product-showcase,
+            .about-content,
+            .delivery-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .vision-mission {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-badge {
+                position: relative;
+                bottom: auto;
+                right: auto;
+                margin-top: 1rem;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <img src="/mnt/kimi/upload/LOGO.png" alt="DMC Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="logo-title">DMC FOOD PRODUCTS</span>
+                    <span class="logo-slogan">TASTY</span>
+                </div>
+            </a>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#delivery">Delivery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            
+            <button class="mobile-menu-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>DMC FOOD PRODUCTS</h1>
+                <div class="hero-slogan">TASTY</div>
+                <p class="hero-description">
+                    Experience the freshness of Sri Lankan dairy. We bring you hygienic, delicious dairy products made from the finest quality milk, delivered straight from our farm to your doorstep.
+                </p>
+                <a href="#products" class="btn-primary">
+                    <i class="fas fa-shopping-cart"></i>
+                    Buy Now
+                </a>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1528750997573-59b89d56f4f7?w=800" alt="Fresh Milk and Dairy">
+                <div class="floating-badge badge-1">
+                    <div class="badge-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div>
+                        <strong>100% Natural</strong>
+                        <small>Fresh from Farm</small>
+                    </div>
+                </div>
+                <div class="floating-badge badge-2">
+                    <div class="badge-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div>
+                        <strong>Hygienic</strong>
+                        <small>Quality Assured</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Product -->
+    <section class="featured-product" id="featured">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Featured Product</h2>
+                <p>Our best-selling refreshing beverage</p>
+            </div>
+            
+            <div class="product-showcase fade-in">
+                <div class="product-image">
+                    <span class="product-badge">Best Seller</span>
+                    <img src="/mnt/kimi/upload/ICEDCOFFEE.png" alt="DMC Iced Coffee">
+                </div>
+                <div class="product-info">
+                    <h3>Iced Coffee</h3>
+                    <div class="product-price">LKR 150.00</div>
+                    <p class="product-description">
+                        Refresh yourself with our signature Iced Coffee. Made with fresh milk, premium coffee, and natural ingredients for the perfect balance of taste and energy. Each sip delivers a creamy, refreshing experience that keeps you coming back for more.
+                    </p>
+                    <div class="product-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-tint"></i>
+                            <span>150ml Cup</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Natural Ingredients</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-snowflake"></i>
+                            <span>Ready to Drink</span>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/94717566860?text=Hello%20DMC%20FOOD%20PRODUCTS%2C%0A%0AName%3A%0AAddress%3A%0AProduct%3A%20Iced%20Coffee%0AQuantity%3A" target="_blank" class="btn-primary">
+                        <i class="fab fa-whatsapp"></i>
+                        Order via WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose" id="why-us">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Why Choose Us</h2>
+                <p>Committed to quality and freshness in every product</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-cow"></i>
+                    </div>
+                    <h3>Fresh Milk Products</h3>
+                    <p>Sourced daily from healthy, grass-fed cows in our local dairy farms across Sri Lanka.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Natural Ingredients</h3>
+                    <p>No artificial preservatives. Only pure, natural ingredients that you can trust.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-hand-sparkles"></i>
+                    </div>
+                    <h3>Hygienically Prepared</h3>
+                    <p>State-of-the-art facilities following strict hygiene protocols and quality standards.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h3>Affordable Prices</h3>
+                    <p>Premium quality dairy products at prices that fit every budget in Sri Lanka.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>Direct WhatsApp Ordering</h3>
+                    <p>Easy and convenient ordering. Just message us and get your dairy delivered.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content fade-in">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=800" alt="Dairy Farm">
+                    <div class="experience-badge">
+                        <span class="years">Fresh</span>
+                        <small>Daily</small>
+                    </div>
+                </div>
+                
+                <div class="about-text">
+                    <h2>Our Story</h2>
+                    <p>
+                        DMC FOOD PRODUCTS was founded by <strong>Mr. N. H. Priyaranjan</strong> with a simple vision: to bring fresh, hygienic, and tasty dairy products to every household in Sri Lanka.
+                    </p>
+                    <p>
+                        Starting from our facility in Pannipitiya, we have grown into a trusted local brand known for quality and authenticity. Every product is crafted with care, using traditional methods combined with modern hygiene standards.
+                    </p>
+                    <p>
+                        We believe that good dairy starts with happy cows, clean environments, and passionate people. That's why we work closely with local farmers and maintain strict quality control at every step.
+                    </p>
+                    
+                    <div class="founder-info">
+                        <div class="founder-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="founder-details">
+                            <h4>Mr. N. H. Priyaranjan</h4>
+                            <p>Founder & Managing Director</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="vision-mission fade-in">
+                <div class="vm-card vision">
+                    <h3><i class="fas fa-eye"></i> Our Vision</h3>
+                    <p>To become a trusted dairy food brand in Sri Lanka by providing fresh, hygienic, and tasty dairy products made from high-quality milk.</p>
+                </div>
+                <div class="vm-card mission">
+                    <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
+                    <p>To deliver delicious dairy products using fresh milk while maintaining the highest standards of hygiene, quality, and customer satisfaction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Our Products</h2>
+                <p>Fresh dairy products crafted with care</p>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Product 1: Iced Coffee -->
+                <div class="product-card available fade-in">
+                    <div class="product-image-container">
+                        <span class="stock-badge available">Available</span>
+                        <img src="/mnt/kimi/upload/ICEDCOFFEE.png" alt="Iced Coffee">
+                    </div>
+                    <div class="product-card-content">
+                        <h3>Iced Coffee</h3>
+                        <div class="price">LKR 150.00</div>
+                        <div class="size"><i class="fas fa-tint"></i> 150ml Cup</div>
+                        <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">
+                            Refreshing iced coffee made with fresh milk and premium ingredients.
+                        </p>
+                        <a href="https://wa.me/94717566860?text=Hello%20DMC%20FOOD%20PRODUCTS%2C%0A%0AName%3A%0AAddress%3A%0AProduct%3A%20Iced%20Coffee%0AQuantity%3A" target="_blank" class="btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                            Buy Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 2: Curd -->
+                <div class="product-card out-of-stock fade-in">
+                    <div class="product-image-container" style="background: linear-gradient(135deg, #f3f4f6, #e5e7eb);">
+                        <span class="stock-badge out-of-stock">Out of Stock</span>
+                        <i class="fas fa-cheese" style="font-size: 4rem; color: #d1d5db;"></i>
+                    </div>
+                    <div class="product-card-content">
+                        <h3>Curd</h3>
+                        <div class="price" style="color: #9ca3af;">LKR --</div>
+                        <div class="size"><i class="fas fa-tint"></i> Traditional Pot</div>
+                        <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">
+                            Traditional Sri Lankan curd made from fresh buffalo milk.
+                        </p>
+                        <button class="btn-disabled">
+                            <i class="fas fa-clock"></i>
+                            Out of Stock
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 3: Yoghurt Drink -->
+                <div class="product-card out-of-stock fade-in">
+                    <div class="product-image-container" style="background: linear-gradient(135deg, #f3f4f6, #e5e7eb);">
+                        <span class="stock-badge out-of-stock">Out of Stock</span>
+                        <i class="fas fa-wine-bottle" style="font-size: 4rem; color: #d1d5db;"></i>
+                    </div>
+                    <div class="product-card-content">
+                        <h3>Yoghurt Drink</h3>
+                        <div class="price" style="color: #9ca3af;">LKR --</div>
+                        <div class="size"><i class="fas fa-tint"></i> 200ml Bottle</div>
+                        <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">
+                            Probiotic yoghurt drink for a healthy digestive system.
+                        </p>
+                        <button class="btn-disabled">
+                            <i class="fas fa-clock"></i>
+                            Out of Stock
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Delivery Information -->
+    <section class="delivery" id="delivery">
+        <div class="container">
+            <div class="delivery-grid fade-in">
+                <div class="delivery-content">
+                    <h2>Delivery Information</h2>
+                    <p>We deliver fresh dairy products directly to your doorstep. Simply place your order through WhatsApp and we'll handle the rest.</p>
+                    
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem; font-size: 1.3rem;">Delivery Areas</h3>
+                    <div class="delivery-areas">
+                        <span class="area-tag"><i class="fas fa-map-marker-alt"></i> Colombo</span>
+                        <span class="area-tag"><i class="fas fa-map-marker-alt"></i> Maharagama</span>
+                        <span class="area-tag"><i class="fas fa-map-marker-alt"></i> Pannipitiya</span>
+                    </div>
+                    
+                    <p style="margin-top: 2rem; font-size: 0.95rem; opacity: 0.8;">
+                        <i class="fas fa-info-circle"></i> 
+                        Delivery will be arranged after WhatsApp order confirmation. Cash on delivery available.
+                    </p>
+                </div>
+                
+                <div class="delivery-visual">
+                    <div class="delivery-icon">
+                        <i class="fas fa-motorcycle"></i>
+                    </div>
+                    <p style="margin-top: 1.5rem; font-size: 1.2rem; font-weight: 600;">Fast & Fresh Delivery</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Contact Us</h2>
+                <p>Get in touch for orders and inquiries</p>
+            </div>
+            
+            <div class="contact-grid fade-in">
+                <div class="contact-info">
+                    <h2>DMC FOOD PRODUCTS</h2>
+                    <p style="color: var(--text-light); margin-bottom: 2rem;">
+                        We're here to serve you fresh dairy products. Reach out to us via WhatsApp or fill out the form below.
+                    </p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Address</h4>
+                                <p>308/1/B, Palenwatta,<br>Pannipitiya, Sri Lanka</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>WhatsApp</h4>
+                                <a href="https://wa.me/94717566860" target="_blank">+94 71 756 6860</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Business Hours</h4>
+                                <p>Monday - Saturday: 7:00 AM - 7:00 PM<br>Sunday: 8:00 AM - 5:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Your full name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="Your phone number">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="4" required placeholder="Your message or order details"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Map -->
+            <div class="map-container fade-in">
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Our Location</h3>
+                    <p>308/1/B, Palenwatta, Pannipitiya, Sri Lanka</p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=6.8417,79.9414" target="_blank" class="btn-primary" style="margin-top: 1rem; display: inline-block;">
+                        <i class="fas fa-external-link-alt"></i>
+                        Open in Google Maps
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo-title">DMC FOOD PRODUCTS</div>
+                <div class="logo-slogan">TASTY</div>
+                <p>Bringing fresh, hygienic, and tasty dairy products from our farm to your table. Trusted quality from Pannipitiya, Sri Lanka.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#delivery">Delivery Info</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h4>Contact Info</h4>
+                <p><i class="fas fa-map-marker-alt"></i> 308/1/B Palenwatta, Pannipitiya, Sri Lanka</p>
+                <p><i class="fab fa-whatsapp"></i> +94 71 756 6860</p>
+                <p><i class="fas fa-envelope"></i> info@dmcfoodproducts.com</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 DMC FOOD PRODUCTS. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--light-green);"></i> for Sri Lanka</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // Scroll Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Navbar Background on Scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.05)';
+            }
+        });
+
+        // Form Submission Handler
+        function handleSubmit(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            
+            // Create WhatsApp message
+            const whatsappMessage = `Hello DMC FOOD PRODUCTS,\n\nName: ${name}\nPhone: ${phone}\nMessage: ${message}`;
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            
+            // Open WhatsApp
+            window.open(`https://wa.me/94717566860?text=${encodedMessage}`, '_blank');
+            
+            // Reset form
+            e.target.reset();
+            
+            // Show success feedback
+            alert('Thank you! Opening WhatsApp to send your message...');
+        }
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
